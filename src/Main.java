@@ -11,6 +11,8 @@ public class Main {
         String move = "";
         Board gameBoard = new Board();
         Scanner input = new Scanner(System.in);
+        System.out.print("\033[H\033[2J");
+        System.out.flush();  
         System.out.println("Tic-Tac-Toe");
         gameBoard.updateBoard();
         String playerOne =
@@ -29,7 +31,9 @@ public class Main {
                     if (gameBoard.checkOpen(Integer.parseInt(move.substring(0, 1)) - 1,
                                     Integer.parseInt(move.substring(1, 2)) - 1)) {
                         gameBoard.move(Integer.parseInt(move.substring(0, 1)) - 1,
-                                        Integer.parseInt(move.substring(1, 2)) - 1, 'X');
+                                        Integer.parseInt(move.substring(1, 2)) - 1, 'x');
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
                         gameBoard.updateBoard();
                     } else {
                         System.out.println("");
@@ -46,7 +50,9 @@ public class Main {
                     if (gameBoard.checkOpen(Integer.parseInt(move.substring(0, 1)) - 1,
                                     Integer.parseInt(move.substring(1, 2)) - 1)) {
                         gameBoard.move(Integer.parseInt(move.substring(0, 1)) - 1,
-                                        Integer.parseInt(move.substring(1, 2)) - 1, 'O');
+                                        Integer.parseInt(move.substring(1, 2)) - 1, '◯');
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
                         gameBoard.updateBoard();
                     } else {
                         System.out.println("");
@@ -79,6 +85,8 @@ public class Main {
                 break;
             }
             gameBoard = new Board();
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
             gameBoard.updateBoard();
             turn = 0;
         }

@@ -106,14 +106,17 @@ public class Board {
             System.out.print(number + " ");
             for (int j = 0; j < 3; j++) {
                 if(j == 1 || j == 2) {
-                    if(this.grid[i][j-1] != '▢') {
-                        System.out.print(" " + this.grid[i][j]);
-                    }
-                    else
-                        System.out.print(this.grid[i][j]);
+                    System.out.print(" ");
                 }
-                else
+                if(this.grid[i][j] == 'x') {
+                    System.out.print("\u001B[31m" + this.grid[i][j] + "\u001B[0m");
+                }
+                else if(this.grid[i][j] == '◯') {
+                    System.out.print("\u001B[34m" + this.grid[i][j] + "\u001B[0m");
+                }
+                else {
                     System.out.print(this.grid[i][j]);
+                }
             }
         }
         System.out.println("");
