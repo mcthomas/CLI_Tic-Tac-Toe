@@ -1,4 +1,4 @@
-
+//Handles operations made to game board
 public class Board {
 
     public char[][] grid;
